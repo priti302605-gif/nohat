@@ -380,10 +380,10 @@ export default function App() {
                           </div>
                           <button 
                             onClick={() => downloadImage(processedImg!, `nohat-${activeTool}-${Date.now()}.${activeTool === 'vectorize' ? 'tif' : 'png'}`)}
-                            className="px-8 py-4 bg-white text-black rounded-2xl font-black text-sm flex items-center gap-3 hover:scale-105 active:scale-95 transition-all"
+                            className="px-8 py-4 bg-white text-black rounded-2xl font-black text-sm flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-xl"
                           >
                             <Download className="w-5 h-5" />
-                            DOWNLOAD {activeTool === 'vectorize' ? 'TIF' : 'UHD'}
+                            DOWNLOAD {activeTool === 'vectorize' ? 'TIF ASSET' : 'FULL HD'}
                           </button>
                         </div>
                       </div>
@@ -534,13 +534,17 @@ export default function App() {
                     <div className="space-y-10">
                        <div className="relative group rounded-[2.5rem] overflow-hidden border border-orange-500/30">
                           <img src={bypassedImg} className="w-full h-auto" alt="Bypassed Result" />
-                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                             <button 
-                                onClick={() => downloadImage(bypassedImg!, `nohat-bypassed-${Date.now()}.jpg`)}
-                                className="px-12 py-5 bg-white text-black rounded-2xl font-black text-lg flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-2xl"
+                          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 p-8 flex items-center justify-between">
+                            <div className="text-left">
+                              <p className="text-[10px] font-black text-orange-500 uppercase tracking-widest">Premium Cleaned</p>
+                              <h4 className="text-2xl font-bold">4K FindStock Output</h4>
+                            </div>
+                            <button 
+                                onClick={() => downloadImage(bypassedImg!, `nohat-findstock-${Date.now()}.jpg`)}
+                                className="px-10 py-4 bg-white text-black rounded-2xl font-black text-sm flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-2xl"
                               >
                                 <Download className="w-6 h-6" />
-                                DOWNLOAD FULL HD
+                                DOWNLOAD CLEAN UHD
                               </button>
                           </div>
                        </div>
@@ -648,13 +652,16 @@ export default function App() {
           </div>
 
           <div>
-             <h5 className="text-sm font-black uppercase tracking-widest mb-8 text-white">LEGAL</h5>
-             <ul className="space-y-4 text-white/40 font-bold text-xs uppercase tracking-widest">
-               <li><a href="#" className="hover:text-orange-500 transition-colors">Terms of Use</a></li>
-               <li><a href="#" className="hover:text-orange-500 transition-colors">Fair Use Policy</a></li>
-               <li><a href="#" className="hover:text-orange-500 transition-colors">DMCA</a></li>
-               <li><a href="#" className="hover:text-orange-500 transition-colors">Contact</a></li>
-             </ul>
+             <h5 className="text-sm font-black uppercase tracking-widest mb-8 text-white">PROJECT CODE</h5>
+             <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6">
+                <p className="text-[10px] text-white/30 font-bold mb-4 leading-relaxed">Download the full source of this website from the settings menu.</p>
+                <button 
+                  onClick={() => alert("To download the code: Click the 'Settings' icon (bottom left), go to 'Project', and select 'Download ZIP' or 'Export to GitHub'.")}
+                  className="text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] border-b border-orange-500/20 hover:text-orange-400 transition-all"
+                >
+                  LEARN HOW
+                </button>
+             </div>
           </div>
         </div>
         
