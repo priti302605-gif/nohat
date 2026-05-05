@@ -1,0 +1,6 @@
+{
+  "name": "Nohat AI - Premium Creative Tools",
+  "description": "Unlock premium quality with AI. Generate images, upscale to 4K, convert to vectors, and download high-res assets for free.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["AI Image Generation", "4K Image Upscaling", "Image to Vector Conversion"]
+}
